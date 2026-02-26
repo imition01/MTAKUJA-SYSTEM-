@@ -1,0 +1,150 @@
+
+:root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #1f2933;
+    --muted: #6b7280;
+    --primary: #0f4c81;
+    --primary-600: #137bd5;
+    --border: #e5e7eb;
+    --shadow: 0 10px 30px rgba(15, 76, 129, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #eef3f9 0%, #f7fafc 100%);
+    color: var(--text);
+    margin: 0;
+    padding: 32px 20px 60px;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2 {
+    margin: 24px 0 10px;
+    color: var(--primary);
+}
+
+p{
+    text-align: center;
+    color: var(--muted);
+    margin: 0 0 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    max-width: 980px;
+    margin: 0 auto 16px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+}
+
+input, select, button {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+input, select {
+    background: #fff;
+}
+
+input::placeholder {
+    color: var(--muted);
+}
+
+button {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-600);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 24px auto;
+    max-width: 980px;
+}
+
+table {
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+thead {
+    background: #f2f6fb;
+    color: var(--primary);
+}
+
+th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: #f8fbff;
+}
+
+td button {
+    margin-right: 6px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+/* Grid placement for form fields */
+#name { grid-column: span 2; }
+#studentId { grid-column: span 2; }
+#gender { grid-column: span 1; }
+#age { grid-column: span 1; }
+#formLevel { grid-column: span 2; }
+form button[type="submit"] { grid-column: span 1; }
+#searchInput { grid-column: span 2; }
+form button[onclick="searchStudent()"] { grid-column: span 1; }
+
+@media (max-width: 900px) {
+    form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #name,
+    #studentId,
+    #gender,
+    #age,
+    #formLevel,
+    #searchInput,
+    form button[type="submit"],
+    form button[onclick="searchStudent()"] {
+        grid-column: span 2;
+    }
+}

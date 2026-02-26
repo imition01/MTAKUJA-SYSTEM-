@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            STUDENT MANAGEMENT SYSTEM
+        </title>
+        
+        <link rel="stylesheet" href="system.css">
+    </head>    
+    <body>
+        <h1>
+            MTAKUJA REGISTRATION SYSTEM
+        </h1>
+
+        <h2>
+            Registration student
+        </h2>
+
+        <form id="studentform">
+
+            <input type="text" id="name" placeholder="full name" required> 
+            <input type="text" id="studentId" placeholder="student Id" required>
+            
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            
+            <input type="number" id="age" placeholder="Age" required>
+
+            <select id="formLevel">
+                <option value="">Select Form</option>
+                <option value="1">Form 1</option>
+                <option value="2">Form 2</option>
+                <option value="3">Form 3</option>
+                <option value="4">Form 4</option>
+            </select>
+            
+            <button type="submit">
+                Register
+            </button>
+
+            <input type="text" id="searchInput" placeholder="Search by Name or ID">
+            <button type="button" onclick="searchStudent()">Search</button>
+
+        </form>
+
+        <hr>
+
+        <h2>
+            Registered Students
+        </h2>
+
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>STUDENT ID</th>
+                    <th>NAME</th>
+                    <th>FORM</th>
+                    <th>AVERAGE</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+
+            <tbody id="studenttable">
+            </tbody>
+
+        </table>
+        <br><br><br><br><br>
+        <p>
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+            <b>say no to division II, Nabaki T.O</b>
+            </marquee>
+         </p>
+
+        <script src="script.js"></script>
+    </body>
+</html>
